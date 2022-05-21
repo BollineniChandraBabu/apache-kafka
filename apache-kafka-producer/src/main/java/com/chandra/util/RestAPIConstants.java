@@ -7,6 +7,7 @@ package com.chandra.util;
  */
 public class RestAPIConstants {
     public static final String EMPLOYEE="employee";
+    public static final String DATA_INSERTION_SUCCESS_MESSAGE = "Data Insertion Success";
     private RestAPIConstants(){
      super();
     }

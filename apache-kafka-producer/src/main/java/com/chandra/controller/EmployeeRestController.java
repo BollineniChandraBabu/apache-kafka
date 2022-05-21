@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.chandra.model.Employee;
 import com.chandra.service.EmployeeService;
+import com.chandra.util.HttpStatusResponse;
+import com.chandra.util.ResponseUtils;
 import com.chandra.util.RestAPIConstants;
 
 /**
@@ -33,7 +36,8 @@ public class EmployeeRestController {
 	 */
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE
 	)
-	public String addCustomer(@RequestBody List<Employee> employees) {
-		return employeeService.addEmployeeDetails(employees);
+	public ResponseEntity<HttpStatusResponse> addCustomer(@RequestBody List<Employee> employees) {
+		return ResponseUtils.prepareSuccessResponse(RestAPIConstants.DATA_INSERTION_SUCCESS_MESSAGE,
+				employeeService.addEmployeeDetails(employees));
 	}
 }
