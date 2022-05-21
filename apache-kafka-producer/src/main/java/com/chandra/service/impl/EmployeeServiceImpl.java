@@ -1,7 +1,4 @@
-package com.chandra.producer.service.impl;
-
-import static com.chandra.producer.util.BusinessConstants.EMPLOYEE_RECORD_ADDED_SUCCESS;
-import static com.chandra.producer.util.BusinessConstants.KAFKA_TOPIC_PUBLISH_SUCCESS;
+package com.chandra.service.impl;
 
 import java.util.List;
 
@@ -12,9 +9,11 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import com.chandra.producer.model.Employee;
-import com.chandra.producer.service.EmployeeService;
-import com.chandra.producer.util.KafkaConstants;
+import com.chandra.model.Employee;
+import com.chandra.service.EmployeeService;
+import com.chandra.util.BusinessConstants;
+import com.chandra.util.KafkaConstants;
+
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
@@ -33,9 +32,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         if (!CollectionUtils.isEmpty(employees)) {
             for (Employee employee : employees) {
                 kafkaTemplate.send(KafkaConstants.TOPIC, employee);
-                logger.info(KAFKA_TOPIC_PUBLISH_SUCCESS);
+                logger.info(BusinessConstants.KAFKA_TOPIC_PUBLISH_SUCCESS+employee);
             }
         }
-        return EMPLOYEE_RECORD_ADDED_SUCCESS;
+        return BusinessConstants.EMPLOYEE_RECORD_ADDED_SUCCESS;
     }
 }

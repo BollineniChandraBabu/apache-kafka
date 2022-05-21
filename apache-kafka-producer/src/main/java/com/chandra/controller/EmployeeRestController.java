@@ -1,6 +1,4 @@
-package com.chandra.producer.controller;
-
-import static com.chandra.producer.util.RestAPIConstants.EMPLOYEE;
+package com.chandra.controller;
 
 import java.util.List;
 
@@ -8,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chandra.producer.model.Employee;
-import com.chandra.producer.service.EmployeeService;
+import com.chandra.model.Employee;
+import com.chandra.service.EmployeeService;
+import com.chandra.util.RestAPIConstants;
 
 /**
  * This class is used to handle user requests
@@ -19,7 +19,8 @@ import com.chandra.producer.service.EmployeeService;
  * @author Chandra Babu Bollineni
  *
  */
-@RestController(EMPLOYEE)
+@RestController()
+@RequestMapping(RestAPIConstants.EMPLOYEE)
 public class EmployeeRestController {
 
 	@Autowired

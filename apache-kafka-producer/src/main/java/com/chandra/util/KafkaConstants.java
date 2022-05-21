@@ -1,4 +1,4 @@
-package com.chandra.producer.util;
+package com.chandra.util;
 
 /**
  * This class is used to declare constants of kafka

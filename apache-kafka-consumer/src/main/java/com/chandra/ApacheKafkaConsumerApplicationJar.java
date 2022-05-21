@@ -1,13 +1,13 @@
-package com.example.apachekafkaconsumer;
+package com.chandra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApacheKafkaConsumerApplication {
+public class ApacheKafkaConsumerApplicationJar {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApacheKafkaConsumerApplication.class, args);
+        SpringApplication.run(ApacheKafkaConsumerApplicationJar.class, args);
     }
 
 }

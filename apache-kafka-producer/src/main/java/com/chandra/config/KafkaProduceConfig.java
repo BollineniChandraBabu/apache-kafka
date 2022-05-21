@@ -1,4 +1,4 @@
-package com.chandra.producer.config;
+package com.chandra.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,8 +12,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
-import com.chandra.producer.model.Employee;
-import com.chandra.producer.util.KafkaConstants;
+import com.chandra.model.Employee;
+import com.chandra.util.KafkaConstants;
 
 /**
  * 

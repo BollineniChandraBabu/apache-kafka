@@ -1,13 +1,14 @@
-package com.chandra.producer;
+package com.chandra;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
 @SpringBootApplication
-public class ApacheKafkaApplicationWar extends SpringBootServletInitializer {
+public class ApacheKafkaConsumerApplicationWar extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(ApacheKafkaApplicationJar.class);
+        return application.sources(ApacheKafkaConsumerApplicationJar.class);
     }
 }
