@@ -63,3 +63,5 @@ Add below kafka related dependencies in pom.xml
 	<artifactId>jackson-databind</artifactId>
 </dependency>
 ```
+
+## [HELPME](https://github.com/BollineniChandraBabu/apache-kafka/blob/main/apache-kafka-producer/HELPME.md)
