@@ -1,8 +1,10 @@
 package com.chandra.producer.service.impl;
 
-import com.chandra.producer.model.Employee;
-import com.chandra.producer.service.EmployeeService;
-import com.chandra.producer.util.KafkaConstants;
+import static com.chandra.producer.util.BusinessConstants.EMPLOYEE_RECORD_ADDED_SUCCESS;
+import static com.chandra.producer.util.BusinessConstants.KAFKA_TOPIC_PUBLISH_SUCCESS;
+
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +12,9 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.util.List;
-
-import static com.chandra.producer.util.BusinessConstants.EMPLOYEE_RECORD_ADDED_SUCCESS;
-import static com.chandra.producer.util.BusinessConstants.KAFKA_TOPIC_PUBLISH_SUCCESS;
+import com.chandra.producer.model.Employee;
+import com.chandra.producer.service.EmployeeService;
+import com.chandra.producer.util.KafkaConstants;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
